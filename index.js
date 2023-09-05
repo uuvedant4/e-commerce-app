@@ -283,8 +283,15 @@ const typeDefs = gql`
   type Query {
     products: [Product!]!
     product(id: ID!): Product
+    categories: [Category!]!
+    category(id: ID!): Category
+  }
+  type Category {
+    id: ID!
+    name: String!
   }
   type Product {
+    id: ID!
     name: String!
     description: String!
     quantity: Int!
@@ -303,6 +310,16 @@ const resolvers = {
       const { id: productId } = args;
       const product = products.find((product) => product.id === productId);
       return product ? product : null;
+    },
+    categories: () => {
+      return categories;
+    },
+    category: (parent, args, context) => {
+      const { id: categoryId } = args;
+      const category = categories.find(
+        (category) => category.id === categoryId
+      );
+      return category ? category : null;
     },
   },
 };
