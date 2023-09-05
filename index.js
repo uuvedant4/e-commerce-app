@@ -309,6 +309,7 @@ const typeDefs = gql`
     onSale: Boolean!
     image: String!
     categoryId: ID!
+    category: Category
   }
 `;
 
@@ -337,6 +338,12 @@ const resolvers = {
     products: (parent, args, context) => {
       const categoryId = parent.id;
       return products.filter((product) => product.categoryId === categoryId);
+    },
+  },
+  Product: {
+    category: (parent, args, context) => {
+      const categoryId = parent.categoryId;
+      return categories.find((category) => category.id === categoryId);
     },
   },
 };
