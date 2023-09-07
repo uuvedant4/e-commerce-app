@@ -1,7 +1,5 @@
-const { products } = require("../db");
-
 Category = {
-  products: (parent, args, context) => {
+  products: (parent, args, { products }) => {
     const categoryId = parent.id;
     return products.filter((product) => product.categoryId === categoryId);
   },
