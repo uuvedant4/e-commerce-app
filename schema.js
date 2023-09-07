@@ -20,8 +20,15 @@ const typeDefs = gql`
     price: Float!
     onSale: Boolean!
     image: String!
-    categoryId: ID!
     category: Category
+    reviews: [Review!]!
+  }
+  type Review {
+    id: ID!
+    date: String!
+    title: String!
+    comment: String!
+    rating: Int!
   }
 `;
 
