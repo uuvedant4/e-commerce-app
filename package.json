@@ -19,6 +19,7 @@
   "homepage": "https://github.com/uuvedant4/e-commerce-app#readme",
   "dependencies": {
     "apollo-server": "^3.12.1",
-    "graphql": "^16.8.0"
+    "graphql": "^16.8.0",
+    "uuid": "^9.0.0"
   }
 }
