@@ -23,4 +23,3 @@ const server = new ApolloServer({
 
 server.listen().then(({ url }) => console.log(`Server running at ${url}`));
 
-// 06:18
