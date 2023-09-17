@@ -1,15 +1,15 @@
 Category = {
-  products: (parent, { filter }, { products }) => {
+  products: (parent, { filter }, { db }) => {
     const categoryId = parent.id;
     if (filter) {
       if (filter.onSale) {
-        return products.filter(
+        return db.products.filter(
           (product) =>
             product.categoryId === categoryId && product.onSale === true
         );
       }
     }
-    return products.filter((product) => product.categoryId === categoryId);
+    return db.products.filter((product) => product.categoryId === categoryId);
   },
 };
 
